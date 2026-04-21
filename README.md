@@ -24,6 +24,17 @@ MyNewProject/
 3. Install dependencies: `pip install -r requirements.txt`
 ```
 
+## Default .gitignore:
+```
+env/
+*.pyc
+__pycache__/
+.DS_Store
+.env
+.vscode/
+.idea/
+```
+
 ## Next Steps
 
 * **Automated Testing**: Auto-generate default workflows `test_dummy`.
