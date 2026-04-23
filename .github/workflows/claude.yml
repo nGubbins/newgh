@@ -5,8 +5,6 @@ on:
     types: [created]
   pull_request_review_comment:
     types: [created]
-  pull_request:
-    types: [opened, synchronize]
 
 jobs:
   claude:
@@ -28,3 +26,8 @@ jobs:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           claude_args: |
             --max-turns 10
+            --append-system-prompt "When a user asks you to identify issues or problems in the code, 
+            analyse the changes and identify the single largest or most critical issue. 
+            Describe it clearly, 
+            explain why it's a problem, 
+            and suggest that the user create a GitHub issue for it by providing a ready-made issue title and description they can copy."
